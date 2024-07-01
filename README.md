@@ -3,7 +3,7 @@ Terraform is the Infrastructure code tool which enable to provision the servers 
 
 we can create the resoures with terrform in multiple cloud,
 
-## Files are created in the Terraform
+## Terraform files
 
 1. main.tf - it will contain main terraform code 
 2. variable.tf - containes the variable declare used in the resource block 
