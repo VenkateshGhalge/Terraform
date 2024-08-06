@@ -17,3 +17,4 @@ we can create the resoures with terrform in multiple cloud,
 4. terraform destory -> it will destory the all the resources on the provider 
 
 
+
