@@ -120,3 +120,12 @@ we will created the terraform.tfvar file and store the value for the variable, v
 
 ami_id = "ami-080e1f13689e07408"
 instance_type = "t2.micro"
+
+### conditional opreaters 
+
+conditional experssion is used to apply conditionl logic within the configuration. That allows you to make descision or set value based on conditions expression are typically used to control where resources are created or not 
+
+Syntax for conditional experssion in terraform 
+
+condition ? true_value : false_value
+
