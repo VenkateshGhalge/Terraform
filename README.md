@@ -129,3 +129,24 @@ Syntax for conditional experssion in terraform
 
 condition ? true_value : false_value
 
+
+### module  in terraform 
+
+Modules are containers for multiple resources that are use together. A module consiste of collection of .tf file kept together in a directory. 
+Module are the main way to package and reuse resources confiurations with terraform 
+
+## State file 
+ state file store the information of infrastructure it has created. which is used by terraform to update the existing infrastructure. when delete the resources it will check the statefile which infrasturcture need to deleted. state file is created after running terraform apply 
+
+ ### storing the state file 
+
+ state file might have the secert or we don't want to share the information to all the teams, so be should store it safe place 
+  
+  if we use the git to store the state file, we have to restricted the access to repo, if we are storing the state file to git devops team need to push the statefile to git, or else there will be mistach of the state file
+  
+  to resolve this issue terraform provides the remote backend, in this we can store the state file in external location like amzone S3 bucket 
+
+  when we are running the terraform init command then terraform will get to know we are using the remote backend, it will look in the s3 bucket for state file 
+
+ ### locking state file 
+  we user run the terraform apply they will lock the terraform.tfstate file it will not allow other user to update the state file, as we use the remote backend we can use the dynamodb to hold the lock on the terraform.tfstate file   
