@@ -149,4 +149,4 @@ Module are the main way to package and reuse resources confiurations with terraf
   when we are running the terraform init command then terraform will get to know we are using the remote backend, it will look in the s3 bucket for state file 
 
  ### locking state file 
-  we user run the terraform apply they will lock the terraform.tfstate file it will not allow other user to update the state file, as we use the remote backend we can use the dynamodb to hold the lock on the terraform.tfstate file   
+  we user run the terraform apply they will lock the terraform.tfstate file it will not allow other user to update the state file, as we use the remote backend we can use the dynamodb to hold the lock on the terraform.tfstate file    
