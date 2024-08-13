@@ -150,3 +150,43 @@ Module are the main way to package and reuse resources confiurations with terraf
 
  ### locking state file 
   we user run the terraform apply they will lock the terraform.tfstate file it will not allow other user to update the state file, as we use the remote backend we can use the dynamodb to hold the lock on the terraform.tfstate file    
+
+  ## Provisioner 
+
+  provisioner is used to run the commands or scripts on either local or remote machines and they can tranfer files from a local environments to a remote one. there are 3 available provisioners: 
+  - file (used for copying)
+  - local-exec (used for local opertation)
+  - remote-exec (used for remote operation)
+
+  we have connection block which is used to connect to the servers. The file provisioner and remote-exec provisioner both operate on target resources created in the future 
+
+  connection {
+    type        = "ssh"
+    user        = "ubuntu"
+    private_key = file("~/.ssh/id_rsa")
+    host        = aws_instance.web.public_dns
+  }
+
+
+  file provisioner is used to copy 
+
+  provisioner "file" {
+    source = "path/to/local/apps.py"
+    destination = "/app/webapps/apps.py"
+  }
+
+  local-exec provisioner is used to log or output the 
+
+  provisioner "local-exec"{
+    command = "echo 'Instance created.'"
+  }
+
+  Remote-exec provisioner: 
+
+  provisioner "remote-exec" {
+    inline = [
+      "echo 'Hello Terraform!' > /tmp/hello.txt",
+    ]
+  }
+
+  
