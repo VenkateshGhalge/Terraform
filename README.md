@@ -189,4 +189,13 @@ Module are the main way to package and reuse resources confiurations with terraf
     ]
   }
 
+## Workspace 
+
+terraform workspaces enable us to manage multiple deployments of the same configuration, terrafrom use the default workspace. we can created the workspace for dev, QA and PROD env and use the same terraform code, the state file for respective  workspace the state file will be created 
+
+  below is command to create the workspace 
+  terraform workspace new dev 
+
+  it will create the workspace for dev, if we want to switch to dev workspace below is the command 
+  terraform workspace select dev 
   
