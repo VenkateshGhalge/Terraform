@@ -7,4 +7,3 @@ for creating the aws VPC
 6. associating routing table to subnet --> adding public subnet id --> adding routing table id
 7. creating the security_group --> need to add vpc id --> adding ingress --> engress 
 8. creating the instances  -- > adding keyname --> adding the security group ids --> adding the subent id 
-  
