@@ -199,3 +199,37 @@ terraform workspaces enable us to manage multiple deployments of the same config
   it will create the workspace for dev, if we want to switch to dev workspace below is the command 
   terraform workspace select dev 
   
+  ## Secrents Mangement in terraform 
+
+  using the hashicrop vault to store the secrent 
+  1. we have to create new engine in the vault 
+  2. inside the engine create secert 
+  3. we have to create the policy 
+  4. apply policy to the role 
+
+  we will use the provider as valut for access the secert from vault, to read the data we will use the "data" in the terraform, for creating the resources we will use the "reasource"
+
+  to authenticate with vault we will use auth_login 
+
+  provider "vault" {
+    address = "<http://vault_ip_address:port>
+    skip_chid_token = true
+
+    auth_login {
+      path = "auth/approle/login"
+
+      parameter = {
+        role_id = ""
+        secert_id =""
+      }
+    }
+  }
+
+  for reading the data form vault 
+
+  data "vault_kv_secret_v2" "example" {
+  mount = "kv"
+  name  = "testing"
+}
+
+
