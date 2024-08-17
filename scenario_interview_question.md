@@ -17,7 +17,7 @@
 
      terraform import aws_instance.myvm i-03757bbfd3588c5b8
      
-     ![Alt text](image/image-1.png)
+     ![Alt text](VenkateshGhalge/Terraform/image/image-1.png)
 
      it will create the the terraform state file we will try to plan, in then we will know it will replace the value in main.tf with real value like below 
      ![Alt text](image/image-2.png)
