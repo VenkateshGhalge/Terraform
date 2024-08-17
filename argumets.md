@@ -11,14 +11,12 @@ please check the aws/eks/eks.tf for example
 if we want to created the resoures multpile time, instead of writing resoures block multpile time we can use the count 
 
 resource "aws_instance" "server" {
-  count = 4 # create four similar EC2 instances
-
-  ami           = "ami-a1b2c3d4"
-  instance_type = "t2.micro"
-
-  tags = {
-    Name = "Server ${count.index}"
-  }
+count = 4 # create four similar EC2 instances
+ami           = "ami-a1b2c3d4"
+instance_type = "t2.micro"
+tags = {
+Name = "Server ${count.index}"
+}
 }
 
 
@@ -32,4 +30,3 @@ The arguments available within a lifecycle block are
  - ignore_changes 
  - replace_triggered_by
 
- 
