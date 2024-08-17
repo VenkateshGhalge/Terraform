@@ -11,16 +11,16 @@
      create the main.tf file in which only put the provider and resources which you need to created the state file 
      keep all resources blank like below 
 
-     ![alt text](image/image.png)
+     ![alt text](image.png)
 
      we will be inporting the resources with below command 
 
      terraform import aws_instance.myvm i-03757bbfd3588c5b8
      
-     ![alt text](image/image-1.png)
+     ![alt text](image-1.png)
 
      it will create the the terraform state file we will try to plan, in then we will know it will replace the value in main.tf with real value like below 
-     ![alt text](image/image-2.png)
+     ![alt text](image-2.png)
 
      we will replace the value in the main.tf   
 
@@ -50,4 +50,3 @@
 
      local-exec are used to run the command on the local machine and remote-exec is used to run the command on the remote host 
      there is file provisioner also, which is used to copy the file from local machine to remote host 
-     
