@@ -50,3 +50,16 @@
 
      local-exec are used to run the command on the local machine and remote-exec is used to run the command on the remote host 
      there is file provisioner also, which is used to copy the file from local machine to remote host 
+
+6. One of your team has updated the resources in the AWS using console, now the terraform statefile and the resources status are different, how will you resolve this issue 
+
+  we will used the refersh command, it will update the state file status to current resources status 
+
+  terraform refresh 
+
+7. There are multiple resources configured on the cloud, if we want to destory only one ressource. How can that be achived 
+
+we can used the --target option in the command 
+
+terraform destory --target aws_instance.demo_vm1
+
