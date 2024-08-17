@@ -11,16 +11,16 @@
      create the main.tf file in which only put the provider and resources which you need to created the state file 
      keep all resources blank like below 
 
-     ![image info](image/image.png)
+     ![Alt text](image/image.png)
 
      we will be inporting the resources with below command 
 
      terraform import aws_instance.myvm i-03757bbfd3588c5b8
      
-     ![image info](image/image-1.png)
+     ![Alt text](image/image-1.png)
 
      it will create the the terraform state file we will try to plan, in then we will know it will replace the value in main.tf with real value like below 
-     ![image info](image/image-2.png)
+     ![Alt text](image/image-2.png)
 
      we will replace the value in the main.tf   
 
